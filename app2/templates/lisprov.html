@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de Proveedores</h1>
+    <a href="{% url 'add_prov' %}"><button>Agregar Proveedor</button></a>
+    <table>
+        <thead>
+            <caption>Proveedores</caption>
+            <th>id</th>
+            <th>nombre</th>
+            <th>telefono</th>
+        </thead>
+        <tbody>
+            {% for proveedor in lisprov %}
+            <tr>
+                <td>{{ proveedor.id }}</td>
+                <td>{{ proveedor.nombre }}</td>
+                <td>{{ proveedor.telefono }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

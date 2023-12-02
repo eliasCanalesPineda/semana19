@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if es_estudiante or es_admin%}
+        <h1>Bienvenido </h1> <h3>{{ user.username }}</h3> <p>al área de Estudiantes</p>
+    {% else %}
+        <h1>No tienes permisos para acceder a está página</h1>
+    {% endif %}
+    <a href="{% url 'logout' %}"><button>Cerrar sesión</button></a>
+</body>
+</html>

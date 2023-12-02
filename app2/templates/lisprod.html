@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de productos</h1>
+    <a href="{% url 'add_prod' %}"><button>Agregar producto</button></a>
+    <table>
+        <thead>
+            <tr>
+                <caption>Tabla de productos</caption>
+                <th>id</th>
+                <th>nombre</th>
+                <th>stock</th>
+                <th>fk_prov_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in lisprod %}
+            <tr>
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.stock }}</td>
+                <td>{{ producto.fk_prov_id }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
